@@ -1,8 +1,8 @@
 from enum import Enum
 
 class PartOfSpeech(Enum):
-    VERB = 1
-    NOUN = 2
-    ADJECTIVE = 3
+    VERB = "verb"
+    NOUN = "noun"
+    ADJECTIVE = "adjective"
 
 
