@@ -12,7 +12,8 @@ class MySQLRepository(AbstractRepository):
             	  'passwd': 'strongpassword',
                   'host': 'localhost',
                   'port': '32000',
-                  'database': 'en_jp'}
+                  'database': 'en_jp',
+                  }
 
         """
         
@@ -30,43 +31,60 @@ class MySQLRepository(AbstractRepository):
         self.cursor.close()
         self.conn.close()
 
-    def map_pos(self, entry) -> PartOfSpeech:
-        pos_switcher = {
-            'verb': PartOfSpeech.VERB,
-            'noun': PartOfSpeech.NOUN,
-            'adjective': PartOfSpeech.ADJECTIVE,
-        }
-        return pos_switcher.get(entry)
 
-    def map_meanings(self, lemma):
-        sql = ("SELECT id "
-               "FROM lexical_entry "
-               "WHERE lemma_form LIKE %s"
-               )
-        self.cursor.execute(sql, (lemma,))
-        row = self.cursor.fetchall()
-        lexical_entry_id = row[0][0]
-
-        sql = ("SELECT definition "
+# I may separately return meanings, pronunciation, etymology, morphemes in the future
+    def _get_meaning(self, lexical_entry_id):
+        sql = ("SELECT id, difinition, pos, example_sentence "
                "FROM meanings "
-               "WHERE lexical_entry_id = %s "
-               )
+               "WHERE lexical_entry_id = %s ")
+        self.cursor.execute(sql, lexical_entry_id)
+        rows = self.cursor.fetchall()
+        return [Meaning(id=row[0],
+                        definition=row[1],
+                        pos=PartOfSpeech(row[2]),
+                        example_sentence=row[3])
+                for row in rows]
+
+    def _get_pronunciation(self, lexical_entry_id):
+        sql = ("SELECT ipa")
+
+    def _get_etymology(self, lexical_entry_id):
+        sql = ("SELECT id, origin_and_history "
+               "FROM etymology "
+               "WHERE lexical_entry_id = %s ")
+        self.cursor.execute(sql, lexical_entry_id)
+        rows = self.cursor.fetchall()
+        return [Etymology(id=row[0],
+                          origin_and_history=row[1])
+                for row in rows]
+
+    def _get_morphemes(self, lexical_entry_id):
+        sql = ("SELECT id, form, meaning "
+               "FROM morpheme "
+               "WHERE lexical_entry_id = %s ")
         self.cursor.execute(sql, (lexical_entry_id,))
         rows = self.cursor.fetchall()
+        return [Morpheme(id=row[0],
+                         form=row[1],
+                         meaning=row[2])
+                for row in rows
+        ]
 
-        return [row[0] for row in rows]
 
+    # For public
     def load_lexicon(self):
-        sql = ("SELECT le.lemma_form, m.definition "
-               "FROM lexical_entry le "
+        sql = ("SELECT lemma_form "
+               "FROM lexical_entry "
                "JOIN meanings m ON le.id = m.lexical_entry_id"
                )
         self.cursor.execute(sql)
-        rows = self.cursor.fetchall()
+        entries = self.cursor.fetchall()
+        lemma_forms = [row[0] for row in entries]
 
-        result = []
-        for row in rows:
+        lexicon = []
+        for entry_id, lemma_form in entries:
+            meanings = self.map_meanings(lemma_form)
             entry = LexicalEntry(row[0], row[1])
-            result.append(entry)
-        return result
+            lexicon.append(lex_entry)
+        return lexicon
 

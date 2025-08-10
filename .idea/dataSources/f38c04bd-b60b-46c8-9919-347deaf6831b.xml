@@ -776,6 +776,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="224" parent="1" name="en_jp">
+      <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
+      <LastIntrospectionLevel>3</LastIntrospectionLevel>
+      <LastIntrospectionLocalTimestamp>2025-08-09.19:04:57</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
     <schema id="225" parent="1" name="information_schema">
@@ -800,5 +803,216 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="232" parent="1" name="root">
       <Host>localhost</Host>
     </user>
+    <table id="233" parent="224" name="etymology">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="234" parent="224" name="etymology_morpheme">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="235" parent="224" name="lexical_entry">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="236" parent="224" name="meanings">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="237" parent="224" name="morpheme">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="238" parent="224" name="pronunciation">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <column id="239" parent="233" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="240" parent="233" name="lexical_entry_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="241" parent="233" name="origin">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </column>
+    <foreign-key id="242" parent="233" name="etymology_ibfk_1">
+      <ColNames>lexical_entry_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>lexical_entry</RefTableName>
+    </foreign-key>
+    <index id="243" parent="233" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="244" parent="233" name="lexical_entry_id">
+      <ColNames>lexical_entry_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="245" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="246" parent="234" name="etymology_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="247" parent="234" name="morpheme_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <foreign-key id="248" parent="234" name="etymology_morpheme_ibfk_1">
+      <ColNames>etymology_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>etymology</RefTableName>
+    </foreign-key>
+    <foreign-key id="249" parent="234" name="etymology_morpheme_ibfk_2">
+      <ColNames>morpheme_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>morpheme</RefTableName>
+    </foreign-key>
+    <index id="250" parent="234" name="PRIMARY">
+      <ColNames>etymology_id
+morpheme_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="251" parent="234" name="morpheme_id">
+      <ColNames>morpheme_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="252" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="253" parent="235" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="254" parent="235" name="lemma_form">
+      <Position>2</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+    </column>
+    <index id="255" parent="235" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="256" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="257" parent="236" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="258" parent="236" name="lexical_entry_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="259" parent="236" name="pos">
+      <Position>3</Position>
+      <StoredType>enum(&apos;verb&apos;, &apos;noun&apos;, &apos;adjective&apos;)|0e</StoredType>
+    </column>
+    <column id="260" parent="236" name="definition">
+      <Position>4</Position>
+      <StoredType>varchar(150)|0s</StoredType>
+      <CollationName>utf8_general_ci</CollationName>
+    </column>
+    <column id="261" parent="236" name="example_sentence">
+      <Position>5</Position>
+      <StoredType>varchar(150)|0s</StoredType>
+    </column>
+    <foreign-key id="262" parent="236" name="meanings_ibfk_1">
+      <ColNames>lexical_entry_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>lexical_entry</RefTableName>
+    </foreign-key>
+    <index id="263" parent="236" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="264" parent="236" name="lexical_entry_id">
+      <ColNames>lexical_entry_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="265" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="266" parent="237" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="267" parent="237" name="form">
+      <Position>2</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+    </column>
+    <column id="268" parent="237" name="meaning">
+      <Position>3</Position>
+      <StoredType>varchar(20)|0s</StoredType>
+    </column>
+    <index id="269" parent="237" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="270" parent="237" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="271" parent="238" name="lexical_entry_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="272" parent="238" name="ipa">
+      <Position>2</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+      <CollationName>utf8_general_ci</CollationName>
+    </column>
+    <foreign-key id="273" parent="238" name="pronunciation_ibfk_1">
+      <ColNames>lexical_entry_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>lexical_entry</RefTableName>
+    </foreign-key>
+    <index id="274" parent="238" name="PRIMARY">
+      <ColNames>lexical_entry_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="275" parent="238" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

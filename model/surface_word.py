@@ -1,4 +1,4 @@
-from model.lexical_entry import *
+from model.lexical_entry import LexicalEntry
 
 class SurfaceWord:
     def __init__(self, surface_form: str, lex_entry: LexicalEntry):
