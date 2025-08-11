@@ -107,7 +107,7 @@ VALUES
 
 
 INSERT INTO morpheme
-    (form, meaning)
+    (form, gloss)
 VALUES
     ('ab', 'off, away'),
     ('rupt', 'break'),

@@ -1,5 +1,6 @@
 from db.repository import *
 import mysql.connector
+from model.lexical_entry import *
 
 
 class MySQLRepository(AbstractRepository):
@@ -59,7 +60,7 @@ class MySQLRepository(AbstractRepository):
 #Pronunciation should be one row
     def _get_pronunciation(self, lexical_entry_id):
         sql = ("SELECT lexical_entry_id, ipa "
-               "FROM pronunciations "
+               "FROM pronunciation "
                "WHERE lexical_entry_id = %s ")
         self.cursor.execute(sql, (lexical_entry_id,))
         row = self.cursor.fetchone()
@@ -71,7 +72,7 @@ class MySQLRepository(AbstractRepository):
         sql = ("SELECT id, origin "
                "FROM etymology "
                "WHERE lexical_entry_id = %s ")
-        self.cursor.execute(sql, lexical_entry_id)
+        self.cursor.execute(sql, (lexical_entry_id,))
         rows = self.cursor.fetchall()
         return [Etymology(id=row[0],
                           origin=row[1])

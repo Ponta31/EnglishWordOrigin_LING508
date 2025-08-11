@@ -778,7 +778,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="224" parent="1" name="en_jp">
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-08-09.19:04:57</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-08-11.02:34:44</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
     <schema id="225" parent="1" name="information_schema">
@@ -966,7 +966,7 @@ morpheme_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="266" parent="237" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
@@ -975,9 +975,9 @@ morpheme_id</ColNames>
       <Position>2</Position>
       <StoredType>varchar(30)|0s</StoredType>
     </column>
-    <column id="268" parent="237" name="meaning">
+    <column id="268" parent="237" name="gloss">
       <Position>3</Position>
-      <StoredType>varchar(20)|0s</StoredType>
+      <StoredType>varchar(30)|0s</StoredType>
     </column>
     <index id="269" parent="237" name="PRIMARY">
       <ColNames>id</ColNames>

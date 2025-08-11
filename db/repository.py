@@ -2,7 +2,7 @@ import abc
 from abc import abstractmethod
 from model.lexical_entry import LexicalEntry
 from model.common_enums import PartOfSpeech
-
+from typing import List
 
 
 class AbstractRepository(metaclass=abc.ABCMeta):
