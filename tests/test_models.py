@@ -1,25 +1,20 @@
-from model.etymology import *
 from model.lexical_entry import *
-from model.meaning import *
 from model.common_enums import *
-from model.morpheme import *
-from model.pronunciation import *
 from model.surface_word import *
-#from model.mnemonic import *
 
-def test_etymology():
-    morph1 = Morpheme(form='re', meaning='again')
-    morph2 = Morpheme(form='voke', meaning='to call')
+def test_etymology_and_morph():
+    morph1 = Morpheme(id=1, form='re', meaning='again')
+    morph2 = Morpheme(id=2, form='vok', meaning='call')
 
     etym = Etymology(
-        origin_and_history= ("revokeの語源は、ラテン語の「revocare」に由来しています。この言葉は、「re-」（再、逆）と「vocare」（呼ぶ、呼び戻す）という二つの部分から成り立っています。「re-」は「戻す」という意味を持ち、「vocare」は「呼ぶ」という意味を持つため、合成すると「呼び戻す」や「再び呼ぶ」という意味になります。英語においては、revokeは、一度与えられた権利や許可を取り消すこと、または無効にすることを示しています。この概念は元々の語源に通じており、何かを再び呼び戻すというニュアンスが反映されています。したがって、法的な文脈や契約の取り消しに関してよく使われる言葉となっています。"
-        )
+        id=10,
+        origin= "revokeの語源は(re + vocare)"
     )
 
-    assert etym.origin_and_history.startswith("revokeの語源は")
+    assert etym.origin.startswith("revokeの語源は")
     assert morph1.form == 're'
     assert morph1.meaning == 'again'
-    assert len(morph1.form) == 2
+    assert len(morph2.form) == 3
 
 
 
@@ -42,12 +37,13 @@ def test_lexical_entry():
 def test_meaning():
 
     meaning = Meaning(
-        definition='取り消す',
+        id="2",
+        definition='正式に取り消す',
         pos=PartOfSpeech.VERB,
         example_sentence="The administration revoked students' visas."
     )
 
-    assert meaning.definition == '取り消す'
+    assert meaning.definition == '正式に取り消す'
     assert meaning.pos == PartOfSpeech.VERB
     assert meaning.example_sentence == "The administration revoked students' visas."
 

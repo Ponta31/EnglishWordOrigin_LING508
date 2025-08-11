@@ -2,9 +2,7 @@ import abc
 from abc import abstractmethod
 from model.lexical_entry import LexicalEntry
 from model.common_enums import PartOfSpeech
-from model.meaning import Meaning
-from model.pronunciation import Pronunciation
-from model.etymology import Etymology
+
 
 
 class AbstractRepository(metaclass=abc.ABCMeta):

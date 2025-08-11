@@ -44,7 +44,7 @@ CREATE TABLE etymology (
 CREATE TABLE morpheme (
     id INT AUTO_INCREMENT,
     form VARCHAR(30),
-    meaning VARCHAR(20),
+    gloss VARCHAR(30),
     PRIMARY KEY (id)
 );
 
