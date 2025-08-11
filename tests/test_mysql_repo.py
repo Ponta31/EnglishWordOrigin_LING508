@@ -5,8 +5,8 @@ repo = MySQLRepository()
 
 
 def test_map_pos():
-    assert repo.map_pos("verb") == PartOfSpeech.VERB
-    assert repo.map_pos("noun") == PartOfSpeech.NOUN
+    assert repo._map_pos("verb") == PartOfSpeech.VERB
+    assert repo._map_pos("noun") == PartOfSpeech.NOUN
 
 
 def test_map_meanings():

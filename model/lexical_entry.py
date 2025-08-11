@@ -1,24 +1,5 @@
 from typing import List
-
-
-class LexicalEntry:
-    def __init__(self,
-                 id: int,
-                 lemma_form: str,
-                 meaning: List[Meaning],
-                 pronunciation: Pronunciation,
-                 etymology: List[Etymology],
-                 morphemes: List[Morpheme]):
-
-        if not lemma_form:
-            raise ValueError("lemma_form cannot be None")
-
-        self.id = id
-        self.lemma_form = lemma_form
-        self.meaning = meaning
-        self.pronunciation = pronunciation
-        self.etymology = etymology
-        self.morphemes = morphemes
+from model.common_enums import *
 
 
 class Meaning:
@@ -74,4 +55,30 @@ class Morpheme:
         self.id = id
         self.form = form
         self.gloss = gloss
+
+
+
+
+
+class LexicalEntry:
+    def __init__(self,
+                 id: int,
+                 lemma_form: str,
+                 meaning: List[Meaning],
+                 pronunciation: Pronunciation,
+                 etymology: List[Etymology],
+                 morphemes: List[Morpheme]):
+
+        if not lemma_form:
+            raise ValueError("lemma_form cannot be None")
+
+        self.id = id
+        self.lemma_form = lemma_form
+        self.meaning = meaning
+        self.pronunciation = pronunciation
+        self.etymology = etymology
+        self.morphemes = morphemes
+
+
+
 
