@@ -81,31 +81,32 @@ class LexicalEntry:
 
 
 #about json https://stackoverflow.com/questions/63893843/how-to-convert-nested-object-to-nested-dictionary-in-python
-
+#For the lexical entry to be changed to json
     def get_json(self) -> dict:
         json = {
             "id": self.id,
             "lemma_form": self.lemma_form,
             "meaning": [
                 {"id": m.id,
-                 "pos": ,
+                 "pos": m.pos.value,
                  "definition": m.definition,
                  "example_sentence": m.example_sentence
                 } for m in self.meaning
             ],
             "pronunciation": {
                 "ipa": self.pronunciation.ipa,
-                }
+                },
             "etymology": [
                 {"id": e.id,
                  "origin": e.origin
                  } for e in self.etymology
+            ],
+            "morphemes": [
+                {"id": morph.id,
+                 "form": morph.form,
+                 "gloss": morph.gloss
+                 } for morph in self.morphemes
             ]
-            "morphemes":
+        }
+        return json
 
-'''class Pronunciation:
-    def __init__(self, lexical_entry_id: int, ipa: str):
-        if not isinstance(ipa, str):
-            raise TypeError("ipa must be a string")
-        self.lexical_entry_id = lexical_entry_id
-        self.ipa = ipa'''
