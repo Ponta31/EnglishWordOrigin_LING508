@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af440c06-b156-45c9-90fc-469a592f4923" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f38c04bd-b60b-46c8-9919-347deaf6831b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f38c04bd-b60b-46c8-9919-347deaf6831b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mysql_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/mysql_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_mysql_repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_mysql_repo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +78,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for test_mysql_repo.test_get_entry">
+  <component name="RunManager" selected="Python tests.Python tests for test_mysql_repo.test_load_lexicon">
     <configuration name="Python tests for test_models.test_pronunciation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="App-for-Word-Origin-and-Mnemonic" />
       <option name="ENV_FILES" value="" />
@@ -166,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_mysql_repo.test_get_entry" />
         <item itemvalue="Python tests.Python tests for test_mysql_repo.test_load_lexicon" />
+        <item itemvalue="Python tests.Python tests for test_mysql_repo.test_get_entry" />
         <item itemvalue="Python tests.Python tests for test_mysql_repo.test_map_meanings" />
         <item itemvalue="Python tests.Python tests for test_mysql_repo.test_map_pos" />
         <item itemvalue="Python tests.Python tests for test_models.test_pronunciation" />
@@ -198,7 +193,7 @@
       <workItem from="1754410880349" duration="606000" />
       <workItem from="1754429272766" duration="100000" />
       <workItem from="1754578959850" duration="16000" />
-      <workItem from="1754723515733" duration="55124000" />
+      <workItem from="1754723515733" duration="61085000" />
     </task>
     <servers />
   </component>
@@ -218,7 +213,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$test_pronunciation.coverage" NAME="test_pronunciation Coverage Results" MODIFIED="1753756057097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$.coverage" NAME=" Coverage Results" MODIFIED="1754879738744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$.coverage" NAME=" Coverage Results" MODIFIED="1754880087050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$test_part_of_speech.coverage" NAME="test_part_of_speech Coverage Results" MODIFIED="1753756053407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$test_surface_word.coverage" NAME="test_surface_word Coverage Results" MODIFIED="1753756115565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$mysql_repository.coverage" NAME="mysql_repository Coverage Results" MODIFIED="1754763762373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />

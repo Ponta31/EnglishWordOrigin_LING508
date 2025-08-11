@@ -15,6 +15,13 @@ CREATE TABLE lexical_entry (
     PRIMARY KEY (id)
 );
 
+INSERT INTO lexical_entry
+    (lemma_form)
+VALUES
+    ('abrupt'),
+    ('revoke'),
+    ('play')
+;
 
 CREATE TABLE meanings (
     id INT AUTO_INCREMENT,
@@ -26,67 +33,6 @@ CREATE TABLE meanings (
     FOREIGN KEY (lexical_entry_id) REFERENCES lexical_entry(id)
 );
 
-CREATE TABLE pronunciation (
-    lexical_entry_id INT,
-    ipa NVARCHAR(30),
-    PRIMARY KEY (lexical_entry_id),
-    FOREIGN KEY (lexical_entry_id) REFERENCES lexical_entry(id)
-);
-
-CREATE TABLE etymology (
-    id INT AUTO_INCREMENT,
-    lexical_entry_id INT,
-    origin TEXT CHARACTER SET utf8mb4, #I modified here
-    PRIMARY KEY (id),
-    FOREIGN KEY (lexical_entry_id) REFERENCES lexical_entry(id)
-);
-
-CREATE TABLE morpheme (
-    id INT AUTO_INCREMENT,
-    form VARCHAR(30),
-    gloss VARCHAR(30),
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE etymology_morpheme (
-    etymology_id INT,
-    morpheme_id INT,
-    PRIMARY KEY (etymology_id, morpheme_id),  /*These two id can keep uniqueness*/
-    FOREIGN KEY (etymology_id) REFERENCES etymology(id),
-    FOREIGN KEY (morpheme_id) REFERENCES morpheme(id)
-);
-
-/*
-CREATE TABLE mnemonic (
-    id INT AUTO_INCREMENT,
-    meaning_id INT,
-    ja_sentence TEXT,
-    sentence_vector VECTOR,
-    similarity_to_lemma FLOAT,
-    PRIMARY KEY (id),
-    FOREIGN KEY (meaning_id) REFERENCES meanings(id)
-
-);
-*/
-
-INSERT INTO lexical_entry
-    (lemma_form)
-VALUES
-    ('abrupt'),
-    ('revoke'),
-    ('play')
-;
-
-
-INSERT INTO pronunciation
-    (lexical_entry_id, ipa)
-VALUES
-    (1, N'əˈbrʌpt'),
-    (2, N'rɪˈvoʊk'),
-    (3, N'pleɪ')
-;
-
-
 INSERT INTO meanings
     (lexical_entry_id, pos, definition, example_sentence)
 VALUES
@@ -97,6 +43,33 @@ VALUES
 ;
 
 
+
+CREATE TABLE pronunciation (
+    lexical_entry_id INT,
+    ipa NVARCHAR(30),
+    PRIMARY KEY (lexical_entry_id),
+    FOREIGN KEY (lexical_entry_id) REFERENCES lexical_entry(id)
+);
+
+INSERT INTO pronunciation
+    (lexical_entry_id, ipa)
+VALUES
+    (1, N'əˈbrʌpt'),
+    (2, N'rɪˈvoʊk'),
+    (3, N'pleɪ')
+;
+
+
+
+CREATE TABLE etymology (
+    id INT AUTO_INCREMENT,
+    lexical_entry_id INT,
+    origin TEXT CHARACTER SET utf8mb4, #I modified here
+    PRIMARY KEY (id),
+    FOREIGN KEY (lexical_entry_id) REFERENCES lexical_entry(id)
+);
+
+
 INSERT INTO etymology
     (lexical_entry_id, origin)
 VALUES
@@ -104,6 +77,14 @@ VALUES
     (2,N'revokeの語源は、ラテン語の「revocare」に由来しています。この言葉は、「re-」（再、逆）と「vocare」（呼ぶ、呼び戻す）という二つの部分から成り立っています。「re-」は「戻す」という意味を持ち、「vocare」は「呼ぶ」という意味を持つため、合成すると「呼び戻す」や「再び呼ぶ」という意味になります。英語においては、revokeは、一度与えられた権利や許可を取り消すこと、または無効にすることを示しています。この概念は元々の語源に通じており、何かを再び呼び戻すというニュアンスが反映されています。したがって、法的な文脈や契約の取り消しに関してよく使われる言葉となっています。'),
     (3,N'playの語源は、古英語の「plegian」に由来しています。この言葉は「遊ぶ」「楽しむ」といった意味を持っており、さらにその起源はゲルマン語派の言葉にさかのぼります。たとえば、古ノルド語の「plegja」やオランダ語の「plegen」が同じルーツを持ちます。これらの言葉は、もともと「遊び」や「戯れ」といった行為を指していました。また、「play」は古代から、人々が楽しみながら行うさまざまな活動や娯楽を表すために使われてきました。例えば、スポーツや演劇、音楽など、多くの文化において「play」は重要な要素でした。そのため、言葉としての「play」は、人間の文化や生活の中で非常に重要な役割を果たしてきたと言えます。今日でも「play」は遊びや創造的な活動を示す言葉として広く使われています。')
 ;
+
+
+CREATE TABLE morpheme (
+    id INT AUTO_INCREMENT,
+    form VARCHAR(30),
+    gloss VARCHAR(30),
+    PRIMARY KEY (id)
+);
 
 
 INSERT INTO morpheme
@@ -116,6 +97,17 @@ VALUES
 ;
 
 
+
+
+CREATE TABLE etymology_morpheme (
+    etymology_id INT,
+    morpheme_id INT,
+    PRIMARY KEY (etymology_id, morpheme_id),  /*These two id can keep uniqueness*/
+    FOREIGN KEY (etymology_id) REFERENCES etymology(id),
+    FOREIGN KEY (morpheme_id) REFERENCES morpheme(id)
+);
+
+
 INSERT INTO etymology_morpheme
     (etymology_id, morpheme_id)
 VALUES
@@ -126,3 +118,55 @@ VALUES
 ;
 
 
+/* #reference for below
+VALUES
+    ('abrupt'),
+    ('revoke'),
+    ('play')
+
+CREATE TABLE lexical_entry (
+    id INT NOT NULL AUTO_INCREMENT,
+    lemma_form VARCHAR(30),
+    PRIMARY KEY (id)
+);
+
+*/
+
+
+CREATE TABLE inflected_forms (
+    id INT AUTO_INCREMENT,
+    lexical_entry_id INT,
+    form VARCHAR(30),
+    PRIMARY KEY (id),
+    FOREIGN KEY (lexical_entry_id) REFERENCES lexical_entry(id)
+);
+
+INSERT INTO inflected_forms (lexical_entry_id, form)
+VALUES
+    (1, 'abruptly'),
+    (1, 'abruptest'),
+    (1, 'abruptness'),
+    (2, 'revokes'),
+    (2, 'revoked'),
+    (2, 'revoking'),
+    (3, 'plays'),
+    (3, 'played'),
+    (3, 'playing');
+
+
+
+
+
+
+
+/*
+CREATE TABLE mnemonic (
+    id INT AUTO_INCREMENT,
+    meaning_id INT,
+    ja_sentence TEXT,
+    sentence_vector VECTOR,
+    similarity_to_lemma FLOAT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (meaning_id) REFERENCES meanings(id)
+);
+*/
