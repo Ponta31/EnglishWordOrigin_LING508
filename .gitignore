@@ -3,3 +3,5 @@ model/unused_etymology.py
 model/unused_meaning.py
 model/unused_morpheme.py
 model/unused_pronunciation.py
+.idea/
+

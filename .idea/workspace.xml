@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af440c06-b156-45c9-90fc-469a592f4923" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f38c04bd-b60b-46c8-9919-347deaf6831b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f38c04bd-b60b-46c8-9919-347deaf6831b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/mysql_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/mysql_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/lexical_entry.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/lexical_entry.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +68,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Working-on-Unit4-Feedback",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/daikisuematsu/LING508/App-for-Word-Origin-and-Mnemonic",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

@@ -156,3 +156,44 @@ class MySQLRepository(AbstractRepository):
                              etymology=etymology,
                              morphemes=morphemes)
         return entry
+
+'''
+table lexical_entry (
+    id INT NOT NULL AUTO_INCREMENT,
+    lemma_form VARCHAR(30),
+    PRIMARY KEY (id)
+);
+
+table inflected_forms (
+    id INT AUTO_INCREMENT,
+    lexical_entry_id INT,
+    form VARCHAR(30),
+    PRIMARY KEY (id),
+    FOREIGN KEY (lexical_entry_id) REFERENCES lexical_entry(id)
+);
+
+'''
+
+    def lemmatize(self, surface_form: str) -> str:
+        #Only SELECT lemma_form in the row
+        sql = ("SELECT le.lemma_form "
+               "FROM lexical_entry le "
+               "JOIN inflected_forms f ON f.lexical_entry_id = le.id "
+               "WHERE f.lemma_form = %s ")
+        self.cursor.execute(sql, (surface_form,))
+        row = self.cursor.fetchone()
+        if row:
+            return row[0]
+
+        #If there is no inflected form, only lemma_form
+        sql = ("SELECT lemma_form "
+               "FROM lexical_entry "
+               "WHERE lemma_form = %s ")
+        self.cursor.execute(sql, (surface_form,))
+        row = self.cursor.fetchone()
+        if row:
+            return row[0]
+
+        #If there is no on the table
+        return None
+

@@ -5,8 +5,8 @@ from model.common_enums import *
 class Meaning:
     def __init__(self,
                  id: int,
-                 definition: str,
                  pos: PartOfSpeech,
+                 definition: str,
                  example_sentence: str):
 
         if not definition:
@@ -15,8 +15,8 @@ class Meaning:
             raise TypeError("pos must be a PartOfSpeech instance")
 
         self.id = id
-        self.definition = definition
         self.pos = pos
+        self.definition = definition
         self.example_sentence = example_sentence
 
 
@@ -80,5 +80,32 @@ class LexicalEntry:
         self.morphemes = morphemes
 
 
+#about json https://stackoverflow.com/questions/63893843/how-to-convert-nested-object-to-nested-dictionary-in-python
 
+    def get_json(self) -> dict:
+        json = {
+            "id": self.id,
+            "lemma_form": self.lemma_form,
+            "meaning": [
+                {"id": m.id,
+                 "pos": ,
+                 "definition": m.definition,
+                 "example_sentence": m.example_sentence
+                } for m in self.meaning
+            ],
+            "pronunciation": {
+                "ipa": self.pronunciation.ipa,
+                }
+            "etymology": [
+                {"id": e.id,
+                 "origin": e.origin
+                 } for e in self.etymology
+            ]
+            "morphemes":
 
+'''class Pronunciation:
+    def __init__(self, lexical_entry_id: int, ipa: str):
+        if not isinstance(ipa, str):
+            raise TypeError("ipa must be a string")
+        self.lexical_entry_id = lexical_entry_id
+        self.ipa = ipa'''

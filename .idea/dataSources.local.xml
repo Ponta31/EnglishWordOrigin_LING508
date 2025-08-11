@@ -13,8 +13,8 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
-            <name qname="en_jp" />
             <name qname="@" />
+            <name qname="en_jp" />
           </node>
         </introspection-scope>
       </schema-mapping>

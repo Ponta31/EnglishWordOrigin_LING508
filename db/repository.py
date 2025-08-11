@@ -18,4 +18,6 @@ class AbstractRepository(metaclass=abc.ABCMeta):
     def get_entry(self, lemma_form: str) -> LexicalEntry:
         raise NotImplementedError()
 
-
+    @abstractmethod
+    def lemmatize(self, lemma_form: str) -> str or None:
+        raise NotImplementedError()
