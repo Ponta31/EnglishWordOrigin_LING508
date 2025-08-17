@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af440c06-b156-45c9-90fc-469a592f4923" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/Week1_UseCases.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/Week1_UseCases.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/Week2_ClassDiagrams.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/documentation.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/documentation.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +83,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/daikisuematsu/02_LING508/App-for-Word-Origin-and-Mnemonic",
+    "last_opened_file_path": "/Users/daikisuematsu/02_LING508/EnglishWordOrigin_LING508",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -232,6 +232,7 @@
       <workItem from="1754940137193" duration="9959000" />
       <workItem from="1755325527299" duration="7482000" />
       <workItem from="1755385867275" duration="21562000" />
+      <workItem from="1755451191095" duration="4266000" />
     </task>
     <servers />
   </component>
