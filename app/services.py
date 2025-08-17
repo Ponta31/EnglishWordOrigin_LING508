@@ -6,6 +6,12 @@ class Services:
     def __init__(self):
         self.repo = db.mysql_repository.MySQLRepository()
 
+    #I add get_all_entries()
+    def get_all_entries(self):
+        entries = self.repo.load_lexicon()
+        return [entry.get_json for entry in entries]
+
+
     def lookup_word(self, surface_form: str):
 
         #if there is no input(surface form)
