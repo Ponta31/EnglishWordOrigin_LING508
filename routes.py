@@ -21,13 +21,27 @@ dictConfig({
     }
 })
 
+
+
 def create_app():
     app = Flask(__name__)
     services = Services()
 
+    @app.route('/')
+    def doc():
+        with open('app/doc.html', 'r', encoding='utf-8') as f:
+            return f.read()
+
+    @app.route('/lookup')
+    def lookup_page():
+        with open('web/lookup.html', 'r', encoding='utf-8') as f:
+            return f.read()
+
+
     @app.route('/hello', methods=['GET'])
     def hello():
         return "Hello, World!"
+
 
 
     @app.route("/entries/<surface_form>", methods=['GET'])

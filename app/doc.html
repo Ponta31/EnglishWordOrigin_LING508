@@ -5,11 +5,42 @@
     <title>English Origin bot API| 英語の語源検索ロボット </title>
 </head>
 
-＜body>
-<h1>Welcome to the English Origin bot API</h1>
+<body>
+<h1>Welcome to the English Word Origin bot API</h1>
+<h2>Methods</h2>
 
 
+<h3>Lookup a word</h3>
+<div>
+    <p><strong>Endpoint:</strong> http://localhost:5000/entries/&lt;surface_form&gt;</p>
+    <p><strong>Request type:</strong>strong> GET</p>
+    <p><strong>Description:</strong> Look up an English word info. </p>
 
+    <p><strong>Example request:</strong></p>
+    <pre>GET http://localhost:5000/entries/revoked</pre>
 
+    <p><strong>Example response</strong></p>
+    <pre>{
+        "id": 2,
+        "lemma_form": "revoke",
+        "meaning": [
+        {
+        "id": 2,
+        "pos": "verb",
+        "definition": "正式に取り消す",
+        "example_sentence": "The government decided to revoke the license."
+        }
+        ],
+        "pronunciation": { "ipa": "rɪˈvoʊk" },
+        "etymology": [
+        { "id": 2, "origin": "revokeの語源は、ラテン語の「revocare」に由来しています…" }
+        ],
+        "morphemes": [
+        { "id": 3, "form": "re",  "gloss": "again" },
+        { "id": 4, "form": "voc", "gloss": "call" }
+        ]
+        }</pre>
+
+</div>
 </body>
 </html>

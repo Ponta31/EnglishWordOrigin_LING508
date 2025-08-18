@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>English Word Origin Bot</title>
+</head>
+<body>
+
+<h1>English Word Origin Bot API</h1>
+
+<h2>Lookup an English word</h2>
+
+<form id="form1">
+    <div class="input-group">
+        <label for="word">Word:</label>
+        <input id="word" name="surface_form" type="text" placeholder="enter an English word" />
+    </div>
+    <button type="submit" value="Lookup">Submit</button>
+
+</form>
+
+<h2>Response: </h2>
+<pre id="result"></pre>
+
+
+</body>
+
+
+
+<script>
+async function handleSubmit1(event) {
+    event.preventDefault();
+
+    const surface_form = document.getElementById("word").value;
+    const res = await fetch("/entries/" + surface_form);
+    const myJson = await res.json();
+
+    document.getElementById("result").textContent = JSON.stringify(myJson, undefined, 2);
+
+}
+
+const form1 = document.getElementById("form1");
+form1.addEventListener("submit", handleSubmit1);
+
+
+</script>
+
+</html>

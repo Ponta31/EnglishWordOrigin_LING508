@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="af440c06-b156-45c9-90fc-469a592f4923" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/doc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/documents/Week1_UseCases.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/Week1_UseCases.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/Week2_ClassDiagrams.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/documentation.md" beforeDir="false" afterPath="$PROJECT_DIR$/documents/documentation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +231,7 @@
       <workItem from="1754940137193" duration="9959000" />
       <workItem from="1755325527299" duration="7482000" />
       <workItem from="1755385867275" duration="21562000" />
-      <workItem from="1755451191095" duration="4266000" />
+      <workItem from="1755451191095" duration="20540000" />
     </task>
     <servers />
   </component>
@@ -251,8 +250,9 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$test_pronunciation.coverage" NAME="test_pronunciation Coverage Results" MODIFIED="1753756057097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$pytest_for_test_routes_test_lookup_success.coverage" NAME="pytest for test_routes.test_lookup_success Coverage Results" MODIFIED="1755405774062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$test_pronunciation.coverage" NAME="test_pronunciation Coverage Results" MODIFIED="1753756057097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/EnglishWordOrigin_LING508$routes.coverage" NAME="routes Coverage Results" MODIFIED="1755502168895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$test_part_of_speech.coverage" NAME="test_part_of_speech Coverage Results" MODIFIED="1753756053407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$test_mnemonic.coverage" NAME="test_mnemonic Coverage Results" MODIFIED="1753756046679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/App_for_Word_Origin_and_Mnemonic$pytest_for_test_services_test_lookup_word.coverage" NAME="pytest for test_services.test_lookup_word Coverage Results" MODIFIED="1754956413211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />

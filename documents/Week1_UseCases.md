@@ -1,5 +1,7 @@
 # Use Cases
 
+---
+
 ## Use Case ①: Search for Word Origin *(This project)*
 - **Input:** An English word (e.g., `revoked`)  
 - **Output:**  
